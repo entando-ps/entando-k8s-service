@@ -6,7 +6,7 @@
 
     <groupId>org.entando</groupId>
     <artifactId>entando-k8s-service</artifactId>
-    <version>6.3.4-fix.1</version>
+    <version>6.3.4-fix-rh-sso76</version>
 
     <packaging>jar</packaging>
 
@@ -81,10 +81,21 @@
                 <artifactId>log4j-api</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
+            <!-- Fixes for RedHat SSO 7.6 -->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>oauth2-oidc-sdk</artifactId>
+                <version>9.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
-
+        <!-- Fixes for RedHat SSO 7.6 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-jose</artifactId>
+            <version>5.5.0</version>
+        </dependency>
         <!-- OWASP Fixes -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
